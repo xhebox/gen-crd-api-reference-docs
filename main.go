@@ -393,7 +393,7 @@ func apiGroupForType(t *types.Type, typePkgMap map[*types.Type]*apiPackage) stri
 
 // anchorIDForLocalType returns the #anchor string for the local type
 func anchorIDForLocalType(t *types.Type, typePkgMap map[*types.Type]*apiPackage) string {
-	return fmt.Sprintf("%s.%s", apiGroupForType(t, typePkgMap), t.Name.Name)
+	return strings.ToLower(t.Name.Name)
 }
 
 // linkForType returns an anchor to the type if it can be generated. returns
